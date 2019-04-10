@@ -38,5 +38,5 @@ RPM Repositories have to be enabled and containing required packages.
     capsule_server: capsule.example.com
     policy_name: mypolicy
   roles:
-        - ansible-openscap-client
+        - ansible-role-scap-client-master
 ```
