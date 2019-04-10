@@ -19,10 +19,10 @@
 # policy (key is id as in Foreman)
 
 {{ policy.id }}:
-  :profile: '{{ scap_content }}'
+  :profile: 'profile id from the scap content or the tailored file'
   :content_path: '/var/lib/openscap/content/{{scapcontents.json.digest}}.xml'
   # Download path
   # A path to download SCAP content from proxy
   :download_path: '/compliance/policies/{{policy.id}}/content/{{scapcontents.json.digest}}'
-  :tailoring_path: ''
-  :tailoring_download_path: ''
+  :tailoring_path: '/var/lib/openscap/content/tailoring-file-id-{{policy.tailoring_file_id}}.xml'
+  :tailoring_download_path: '/compliance/policies/{{policy.id}}/tailoring/{{scapcontents.json.digest}}'
