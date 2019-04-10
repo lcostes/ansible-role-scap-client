@@ -28,18 +28,15 @@ RPM Repositories have to be enabled and containing required packages.
 ```yml
 ---
 - name: openscap client
-  hosts: <<host list>>
-  remote_user: <<user>>
+  hosts: myclients
+  remote_user: root
   gather_facts: true
-  become: yes
-  become_user: root
-  become_method: sudo
   vars:
     satellite_server: satellite.example.com
-    satellite_username`: admin
-    satellite_password`: verycomplexpassword
-    capsule_server`: capsule.example.com
-    policy_name`: 'rhel7-pci'
+    satellite_username: admin
+    satellite_password: verycomplexpassword
+    capsule_server: capsule.example.com
+    policy_name: mypolicy
   roles:
-        - ansible-ipaRegister
+        - ansible-openscap-client
 ```
